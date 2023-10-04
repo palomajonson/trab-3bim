@@ -11,5 +11,6 @@ create table tb_produtos {
     nm_produto      varchar(100),
     ds_tamanho      int,
     id_marca        int, foreign key (id_marca) references tb_marcas (id_marca),
-    vl_preco        decimal(10,2)
+    vl_preco        decimal(10,2),
+    img_produto     varchar(200)
 }
