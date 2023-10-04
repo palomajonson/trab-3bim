@@ -52,3 +52,5 @@ endpoint.delete(('/deletar/marca/:id'), async (req, resp) => {
         resp.status(400).send({erro: err.mensage});
     };
 });
+
+export default endpoint;
