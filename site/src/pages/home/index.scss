@@ -4,18 +4,21 @@
   flex-direction: column;
 
 
-  select:focus, input:focus, input:focus{
+  select:focus,
+  input:focus,
+  input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
-}
+  }
 
-  .cabecalho{
+  .cabecalho {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .c1{
+
+  .c1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +26,8 @@
     width: 100vw;
     background-color: #384086e1;
   }
-  .c2{
+
+  .c2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,21 +35,23 @@
     width: 90vw;
     height: 7vh;
 
-    button{
+    button {
       border: none;
       background-color: white;
     }
-    img{
+
+    img {
       height: 4vh;
     }
-    img:hover{
+
+    img:hover {
       cursor: pointer;
       height: 5vh;
       transition: 0.4s;
     }
   }
 
-  .input{
+  .input {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -54,23 +60,25 @@
     width: 40vw;
     margin: 0px 15px 0px 15px;
 
-    textarea:focus, input:focus {
+    textarea:focus,
+    input:focus {
       box-shadow: 0 0 0 0;
       outline: 0;
-  }
+    }
 
-    input{
+    input {
       border: none;
       width: 38vw;
     }
-    img{
+
+    img {
       height: 4vh;
     }
-    
+
   }
 
 
-  .s1-1{
+  .s1-1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,43 +86,43 @@
     height: 10vh;
     width: 30vw;
     padding: 0px 0px 0px 35px;
-    
 
-    select{
+
+    select {
       background-color: #bec4ffd2;
-      border: 1px solid #384086e1;
-
+      border: 2px solid #384086;
       padding: 2px;
-
     }
-    option:hover{
+
+    option:hover {
       background-color: #384086f8;
     }
 
-   
+
 
   }
 
-  .s1-2{
+  .s1-2 {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100vw;
 
-    
+
   }
 
-  .s1-eve{
+  .s1-eve {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 40vw;
+    width: 800px;
     gap: 15px;
-    
-    
-    .s1-1-lado{
+
+
+
+    .s1-1-lado {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
@@ -124,66 +132,70 @@
       border: 2px solid #38408631;
       height: 40vh;
     }
-    .input-imagem{
+
+    .input-imagem {
       padding: 10px;
       background-color: #ffffff;
       color: #333;
       border-radius: 5px;
       height: 5vh;
     }
-    
-    
-    
+
     .input-imagem:focus {
       outline: none;
       border: 1px solid #3c96f5;
       background-color: #fff;
     }
+
     .imagem-preview {
       width: 25vh;
-      max-width: 100%; 
-      height: auto; 
+      max-width: 100%;
+      height: auto;
       border: 1px solid #ccc;
-      border-radius: 5px;
-     
+      border-radius: 5px; 
     }
-    .s1-2-1{
+
+    .s1-2-1 {
       display: flex;
       flex-direction: column;
-
-   
     }
-  
-    .s1-2-lado{
-      display: flex;
-      flex-direction: row !important;
 
-      flex-wrap: wrap;
+    .s1-2-lado {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 5px 0px 5px 0px;
       width: 25vw;
       gap: 15px;
     }
-    .nome{
-      width: 20vw;
-      border: 2px solid #384086;
-      padding: 2px;
-      height: 4vh;
-    }
-    .dois{
-      width: 10vw;
+
+    .nome {
+      width: 98%;
       border: 2px solid #384086;
       padding: 2px;
       height: 4vh;
     }
 
-    .botoes{
+    .dois {
+      width: 50%;
+      border: 2px solid #384086;
+      padding: 2px;
+      height: 4vh;
+    }
+
+    #select_tamanho {
+      height: 5vh;
+    }
+
+    .botoes {
       display: flex;
       flex-direction: row;
-      gap: 5px;
-   margin-top: 15px;
-      align-items: center;
+      justify-content: space-around;
+      margin-top: 15px;
+      width: 100%;
     }
-  
-    .botao{
+
+    .botao {
       background-color: #384086e7;
       border: none;
       width: 10vw;
@@ -191,32 +203,21 @@
       height: 8vh;
       align-items: flex-end;
 
-
-      img{
+      img {
         height: 5vh;
       }
+
     }
-    
-    .botao:hover{
+
+    .botao:hover {
       transition: 0.3s;
       cursor: pointer;
       background-color: #4a54ade5;
-      img{
 
-        transition: 0.3s;
+      img {
+        transition: 0.1s;
         height: 6vh;
       }
     }
-  
-    
   }
-
-  
-
-
-
-
-
 }
-
-
