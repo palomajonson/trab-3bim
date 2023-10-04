@@ -9,7 +9,7 @@ endpoint.get(('/marca'), async (req, resp) => {
         const respo = await ListarTodasMarcas();
         resp.send(respo);
     } catch (err) {
-        resp.status(400).send({erro: err.mensage});
+        resp.status(400).send({erro: err.message});
     };
 });
 
@@ -19,7 +19,7 @@ endpoint.get(('/pesquisar/marca/:busca'), async (req, resp) => {
         const respo = await PesquisarMarcas(pedi);
         resp.send(respo);
     } catch (err) {
-        resp.status(400).send({erro: err.mensage});
+        resp.status(400).send({erro: err.message});
     };
 });
 
@@ -29,7 +29,7 @@ endpoint.post(('/inserir/marca'), async (req, resp) => {
         const respo = await AdicionarMarca(pedi);
         resp.send(respo);
     } catch (err) {
-        resp.status(400).send({erro: err.mensage});
+        resp.status(400).send({erro: err.message});
     };
 });
 
@@ -39,7 +39,7 @@ endpoint.put(('/alterar/marca'), async (req, resp) => {
         const respo = await AlterarMarca(pedi);
         resp.send(respo);
     } catch (err) {
-        resp.status(400).send({erro: err.mensage});
+        resp.status(400).send({erro: err.message});
     };
 });
 
@@ -49,7 +49,7 @@ endpoint.delete(('/deletar/marca/:id'), async (req, resp) => {
         const respo = await DeletarMarca(pedi);
         resp.send(respo);
     } catch (err) {
-        resp.status(400).send({erro: err.mensage});
+        resp.status(400).send({erro: err.message});
     };
 });
 

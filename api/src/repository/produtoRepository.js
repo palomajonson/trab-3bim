@@ -31,10 +31,10 @@ export async function PesquisarProdutos(busca) {
 export async function AdicionarProdutos(produto) {
     const comando = `
     insert into tb_produto (
-        nm_produto,
-        ds_tamanho,
-        id_marca,
-        vl_preco)
+        nm_produto      as nome,
+        ds_tamanho      as tamanho,
+        id_marca        as marca,
+        vl_preco        as preco)
     values (
         ?,
         ?,
@@ -48,6 +48,10 @@ export async function AdicionarProdutos(produto) {
         produto.marca,
         produto.preco
     ]);
+
+    const respoID = respo.insertId;
+    return respoID
+
 };
 
 export async function AlterarProdutos(produto) {
