@@ -11,16 +11,19 @@ function App() {
     setFiltro(!filtro);
     setMais(false);
     setPerfil(false)
-  }
+  };
+
   function MudarP() {
     setPerfil(!perfil);
-   
-  }
+    setFiltro(false);
+    setMais(true);
+  };
 
   function MudarM() {
-    setMais(!mais)
-    setFiltro(false)
-  }
+    setMais(!mais);
+    setFiltro(false);
+    setPerfil(true);
+  };
 
   const handleImagemChange = (event) => {
     const arquivoSelecionado = event.target.files[0];
@@ -49,7 +52,7 @@ function App() {
 
 
           <div className="input"> <input type="text" placeholder="pesquise pelo produto" /> <img src="/assets/images/lupa.png" alt="" /> </div>
-          
+
           <button onClick={MudarM}>
             {mais ? (
               <img src="/assets/images/maiscom.png" alt="Imagem True" />
@@ -58,58 +61,58 @@ function App() {
             )}
           </button>
 
-        <div className='up'>
-        <button onClick={MudarP}>
-          {mais ? (
-              <img src="/assets/images/perfilcom.png" alt="" />
-            ) : (
-              <img src="/assets/images/user.png" alt="" />
-            )}
-          </button>
+          <div className='up'>
+            <button onClick={MudarP}>
+              {mais ? (
+                <img src="/assets/images/perfilcom.png" alt="" />
+              ) : (
+                <img src="/assets/images/user.png" alt="" />
+              )}
+            </button>
 
-        {perfil === true &&
-          <>
-          <div className='position'>
+            {perfil === true &&
+              <>
+                <div className='position'>
 
-            <h3>colaboradores</h3>
+                  <h3>Colaboradores</h3>
 
-            <div className='side'> 
-            <img alt='' src='/assets/images/user.png'/> 
-            <div className='up1'><p>Davi Cavalcanti</p><p>  • Api</p> </div>
-            </div>
+                  <div className='side'>
+                    <img alt='' src='/assets/images/user.png' />
+                    <div className='up1'><p>Davi Cavalcanti</p><p>  • Api</p> </div>
+                  </div>
 
-            <div className='side'> <img alt='' src='/assets/images/user.png'/> 
-            <div className='up1'><p>Kewry Brito</p><p>  • Conexão api+react</p></div>
-            </div>
+                  <div className='side'> <img alt='' src='/assets/images/user.png' />
+                    <div className='up1'><p>Kewry Brito</p><p>  • Conexão api+react</p></div>
+                  </div>
 
-            <div className='side'> <img alt='' src='/assets/images/user.png'/> 
-            <div className='up1'><p>Maria Clara Siqueira</p><p>  • Conexão api+react</p></div>
-            </div>
+                  <div className='side'> <img alt='' src='/assets/images/user.png' />
+                    <div className='up1'><p>Maria Clara Siqueira</p><p>  • Conexão api+react</p></div>
+                  </div>
 
-            <div className='side'> <img alt='' src='/assets/images/user.png'/> 
-            <div className='up1'><p>Paloma Jonson</p><p>  • Reactjs e banco de dados</p></div>
-            </div>
+                  <div className='side'> <img alt='' src='/assets/images/user.png' />
+                    <div className='up1'><p>Paloma Jonson</p><p>  • Reactjs e banco de dados</p></div>
+                  </div>
 
+
+                </div>
+              </>
+
+
+            }
 
           </div>
-          </>
-            
 
-          }
- 
-        </div>
-          
 
-          
+
 
 
 
         </div>
       </div>
 
-      
-        
- 
+
+
+
 
 
       <div className='s1'>
@@ -165,7 +168,7 @@ function App() {
                 <div className='s1-1-lado'>
                   <input type="file" accept="image/*" className='input-imagem' onChange={handleImagemChange} />
                   <img
-                    src={imagem} alt="Imagem Selecionada" className="imagem-preview"/>
+                    src={imagem} alt="Imagem Selecionada" className="imagem-preview" />
                 </div>
 
                 <div className='s1-2-1'>
@@ -196,7 +199,7 @@ function App() {
           }
         </div>
 
-        
+
 
       </div>
 
