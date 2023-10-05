@@ -15,8 +15,9 @@ function App() {
 
   function MudarP() {
     setPerfil(!perfil);
-    setFiltro(false);
+    
     setMais(true);
+    setMais(false)
   };
 
   function MudarM() {
