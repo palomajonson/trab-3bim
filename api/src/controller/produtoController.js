@@ -17,9 +17,10 @@ endpoint.get(('/produto'), async (req, resp) => {
     };
 });
 
-endpoint.get(('/pesquisar/produto/:busca'), async (req, resp) => {
+///pesquisar/produto/busca?nome=
+endpoint.get(('/pesquisar/produto/busca'), async (req, resp) => {
     try {
-        const pedi = req.params.busca;
+        const pedi = req.query;
         const respo = await PesquisarProdutos(pedi)
         resp.send(respo);
     } catch (err) {

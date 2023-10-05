@@ -13,9 +13,10 @@ endpoint.get(('/marca'), async (req, resp) => {
     };
 });
 
-endpoint.get(('/pesquisar/marca/:busca'), async (req, resp) => {
+///pesquisar/marca/busca?nome=
+endpoint.get(('/pesquisar/marca/busca'), async (req, resp) => {
     try {
-        const pedi = req.params.busca;
+        const pedi = req.query;
         const respo = await PesquisarMarcas(pedi);
         resp.send(respo);
     } catch (err) {

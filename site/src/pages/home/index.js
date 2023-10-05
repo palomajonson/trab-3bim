@@ -28,7 +28,7 @@ function App() {
     <div className="App">
 
       <div className="cabecalho">
-        <div className='c1' > <p>nome</p> </div>
+        <div className='c1' > <p>Boo Shoes</p> </div>
 
         <div className="c2" >
           <button onClick={MudarF}>
@@ -59,7 +59,7 @@ function App() {
           {filtro === true &&
             <>
               <select>
-                <option>Filtre pelo Preço</option>
+                <option disabled selected>Filtre pelo Preço</option>
                 <option>Menor que 600</option>
                 <option>Menor que 800</option>
                 <option>Menor que 1000</option>
@@ -70,7 +70,7 @@ function App() {
                 <option>Todos os Preços</option>
               </select>
               <select>
-                <option>Filtre pela Marca</option>
+                <option disabled selected>Filtre pela Marca</option>
                 <option>Adidas</option>
                 <option>Nike</option>
                 <option>Puma</option>
@@ -81,7 +81,7 @@ function App() {
                 <option>Todas as Marcas</option>
               </select>
               <select>
-                <option>Filtre por Tamanho</option>
+                <option disabled selected>Filtre por Tamanho</option>
                 <option>34</option>
                 <option>35</option>
                 <option>36</option>
@@ -108,7 +108,7 @@ function App() {
                   <input type='text' placeholder='nome' className='nome' />
                   <div className='s1-2-lado'>
                     <select id='select_tamanho' className='dois'>
-                      <option>nº</option>
+                      <option disabled selected>nº</option>
                       <option>34</option>
                       <option>35</option>
                       <option>36</option>
@@ -119,6 +119,7 @@ function App() {
                     </select>
                     <input type='text' placeholder='marca' className='dois' />
                   </div>
+                  <textarea className='nome' id='area_texto' placeholder='descrição'></textarea>
                   <input type='number' placeholder='preço' className='nome' />
                   <div className='botoes'>
                     <button className='botao'> <img src='/assets/images/ok.png' alt='' /></button>

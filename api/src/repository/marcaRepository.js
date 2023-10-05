@@ -18,10 +18,10 @@ export async function PesquisarMarcas(busca) {
     from tb_marca 
     where
         nm_marca
-    like %?%
+    like ?
     `;
 
-    const [respo] = await connection.query(comando, [busca])
+    const [respo] = await connection.query(comando, [`%${busca}%`]);
 };
 
 export async function AdicionarMarca(marca) {

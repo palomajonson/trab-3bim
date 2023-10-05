@@ -21,26 +21,29 @@ export async function PesquisarProdutos(busca) {
         from tb_produtos
     where
         nm_produto
-    like %?% 
+    like ? 
     `;
 
-    const [respo] = await connection.query(comando, [busca]);
+    const [respo] = await connection.query(comando, [`%${busca}%`]);
     return respo;
 };
+
 
 export async function MostrarDetalhesProduto(id) {
     const comando = `
     select
         nm_produto      as nome,
         ds_tamanho      as tamanho,
+        ds_produto      as descricao,
         id_marca        as marca,
-        vl_preco        as preco
+        vl_preco        as preco,
         img_produto     as imagem
     from tb_produtos
     where id_produto = ?
     `;
 
     const [respo] = await connection.query(comando, [id])
+    return respo[0];
 }
 
 export async function AdicionarProdutos(produto) {
@@ -48,6 +51,7 @@ export async function AdicionarProdutos(produto) {
     insert into tb_produto (
         nm_produto      as nome,
         ds_tamanho      as tamanho,
+        ds_produto      as descricao,
         id_marca        as marca,
         vl_preco        as preco
     values (
@@ -61,6 +65,7 @@ export async function AdicionarProdutos(produto) {
     const [respo] = await connection.query(comando, [
         produto.nome,
         produto.tamanho,
+        produto.descricao,
         produto.marca,
         produto.preco
     ]);
@@ -89,6 +94,7 @@ export async function AlterarProdutos(produto) {
     set
         nm_produto = ?,
         ds_tamanho = ?,
+        ds_produto = ?,
         id_marca = ?,
         vl_preco = ?
     where id_produto = ?
@@ -97,6 +103,7 @@ export async function AlterarProdutos(produto) {
     const [respo] = await connection.query(comando, [
         produto.nome,
         produto.tamanho,
+        produto.descricao,
         produto.marca,
         produto.preco,
         produto.id

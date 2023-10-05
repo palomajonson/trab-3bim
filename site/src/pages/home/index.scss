@@ -6,11 +6,17 @@
 
   select:focus,
   input:focus,
-  input:focus {
+  input:focus, 
+  textarea:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
   }
 
+  ::placeholder {
+    color: #000000a1;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+    
   .cabecalho {
     display: flex;
     flex-direction: column;
@@ -32,8 +38,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 90vw;
+    width: 100%;
     height: 7vh;
+    box-shadow: 0px 2px #00000080;
 
     button {
       border: none;
@@ -89,13 +96,11 @@
 
 
     select {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
       background-color: #bec4ffd2;
-      border: 2px solid #384086;
+      border: 2px solid #3840869c;
       padding: 2px;
-    }
-
-    option:hover {
-      background-color: #384086f8;
+      margin-inline: 5px;
     }
 
 
@@ -107,9 +112,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-
-
+    width: 100%;
   }
 
   .s1-eve {
@@ -119,7 +122,7 @@
     align-items: center;
     width: 800px;
     gap: 15px;
-
+    padding: 20px;
 
 
     .s1-1-lado {
@@ -174,6 +177,12 @@
       border: 2px solid #384086;
       padding: 2px;
       height: 4vh;
+    }
+
+    #area_texto {
+      resize: none;
+      margin-bottom: 5px;
+      height: 60px;
     }
 
     .dois {
