@@ -4,11 +4,17 @@ import './index.scss';
 function App() {
   const [filtro, setFiltro] = useState(false)
   const [mais, setMais] = useState(true)
+  const [perfil, setPerfil] = useState(true)
   const [imagem, setImagem] = useState(null);
 
   function MudarF() {
     setFiltro(!filtro);
-    setMais(false)
+    setMais(false);
+    setPerfil(false)
+  }
+  function MudarP() {
+    setPerfil(!perfil);
+   
   }
 
   function MudarM() {
@@ -40,7 +46,10 @@ function App() {
             )}
 
           </button>
+
+
           <div className="input"> <input type="text" placeholder="pesquise pelo produto" /> <img src="/assets/images/lupa.png" alt="" /> </div>
+          
           <button onClick={MudarM}>
             {mais ? (
               <img src="/assets/images/maiscom.png" alt="Imagem True" />
@@ -49,8 +58,58 @@ function App() {
             )}
           </button>
 
+        <div className='up'>
+        <button onClick={MudarP}>
+          {mais ? (
+              <img src="/assets/images/perfilcom.png" alt="" />
+            ) : (
+              <img src="/assets/images/user.png" alt="" />
+            )}
+          </button>
+
+        {perfil === true &&
+          <>
+          <div className='position'>
+
+            <h3>colaboradores</h3>
+
+            <div className='side'> 
+            <img alt='' src='/assets/images/user.png'/> 
+            <div className='up1'><p>Davi Cavalcanti</p><p>  • Api</p> </div>
+            </div>
+
+            <div className='side'> <img alt='' src='/assets/images/user.png'/> 
+            <div className='up1'><p>Kewry Brito</p><p>  • Conexão api+react</p></div>
+            </div>
+
+            <div className='side'> <img alt='' src='/assets/images/user.png'/> 
+            <div className='up1'><p>Maria Clara Siqueira</p><p>  • Conexão api+react</p></div>
+            </div>
+
+            <div className='side'> <img alt='' src='/assets/images/user.png'/> 
+            <div className='up1'><p>Paloma Jonson</p><p>  • Reactjs e banco de dados</p></div>
+            </div>
+
+
+          </div>
+          </>
+            
+
+          }
+ 
+        </div>
+          
+
+          
+
+
+
         </div>
       </div>
+
+      
+        
+ 
 
 
       <div className='s1'>
@@ -89,9 +148,14 @@ function App() {
                 <option>38</option>
                 <option>39</option>
                 <option>40</option>
+                <option>41</option>
+                <option>42</option>
+                <option>43</option>
               </select>
             </>
           }
+
+
         </div>
 
         <div className='s1-2' >
@@ -131,6 +195,8 @@ function App() {
             </>
           }
         </div>
+
+        
 
       </div>
 
