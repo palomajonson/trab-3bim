@@ -1,23 +1,29 @@
 import { useState } from 'react'
 import './index.scss';
 
+import axios from "axios";
+
 function App() {
-  const [filtro, setFiltro] = useState(false)
-  const [mais, setMais] = useState(true)
-  const [perfil, setPerfil] = useState(true)
+  const [filtro, setFiltro] = useState(false);
+  const [mais, setMais] = useState(true);
+  const [perfil, setPerfil] = useState(true);
   const [imagem, setImagem] = useState(null);
+  const [nome, setNome] = useState('');
+  const [descri, setDescri] = useState('');
+  const [tamanho, setTamanho] = useState('');
+  const [marca, setMarca] = useState(0);
+  const [preco, setPreco] = useState('');
 
   function MudarF() {
     setFiltro(!filtro);
     setMais(false);
-    setPerfil(false)
+    setPerfil(false);
   };
 
   function MudarP() {
     setPerfil(!perfil);
-    
     setMais(true);
-    setMais(false)
+    setMais(false);
   };
 
   function MudarM() {
@@ -31,7 +37,24 @@ function App() {
     setImagem(URL.createObjectURL(arquivoSelecionado));
   };
 
+  async function Salvar() {
+    try {
+      let respo = {
+        nome: nome,
+        tamanho: tamanho,
+        descricao: descri,
+        marca: marca,
+        preco: preco
+      };
 
+      await axios.post('http://localhost:5000/inserir/produto,', respo);
+      alert('info salvas;');
+
+
+    } catch (err) {
+      
+    }
+  }
 
 
 
@@ -39,7 +62,9 @@ function App() {
     <div className="App">
 
       <div className="cabecalho">
-        <div className='c1' > <p>Boo Shoes</p> </div>
+        <div className='c1' >
+          <img className='logo' src='/assets/images/boologo.png' alt='' />
+        </div>
 
         <div className="c2" >
           <button onClick={MudarF}>
@@ -191,7 +216,7 @@ function App() {
                   <textarea className='nome' id='area_texto' placeholder='descrição'></textarea>
                   <input type='number' placeholder='preço' className='nome' />
                   <div className='botoes'>
-                    <button className='botao'> <img src='/assets/images/ok.png' alt='' /></button>
+                    <button className='botao' onClick={Salvar}> <img src='/assets/images/ok.png' alt='' /></button>
                     <button className='botao'> <img src='/assets/images/lixo.png' alt='' /></button>
                   </div>
 
