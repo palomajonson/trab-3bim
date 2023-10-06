@@ -1,11 +1,13 @@
-import mysql from 'mysql/promise';
+import mysql from 'mysql2/promise';
 
 
-const connection = mysql.CreateConnection({
-hsot: process.env.MYSQL_HOST,
-user: process.env.MYSQL_USER,
-pwd: process.env.MYSQL_PWD,
-db: process.env.MYSQL_DB
+const connection = mysql.createConnection({
+        host: process.env.MYSQL_HOST,
+        user: process.env.MYSQL_USER,
+        password: process.env.MYSQL_PWD,
+        database: process.env.MYSQL_DB
 })
+
+console.log('CONEXÃO OPERANTE')
 
 export { connection }

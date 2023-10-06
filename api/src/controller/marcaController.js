@@ -1,7 +1,7 @@
-import { Router } from 'express'
+import { Router } from 'express';
 const endpoint = Router();
 
-import { AdicionarMarca, AlterarMarca, DeletarMarca, ListarTodasMarcas, PesquisarMarcas } from '../repository/marcaRepository';
+import { AdicionarMarca, AlterarMarca, DeletarMarca, ListarTodasMarcas, PesquisarMarcas } from '../repository/marcaRepository.js';
 
 
 endpoint.get(('/marca'), async (req, resp) => {

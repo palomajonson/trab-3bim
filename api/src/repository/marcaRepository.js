@@ -22,6 +22,7 @@ export async function PesquisarMarcas(busca) {
     `;
 
     const [respo] = await connection.query(comando, [`%${busca}%`]);
+    return respo
 };
 
 export async function AdicionarMarca(marca) {
