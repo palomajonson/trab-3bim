@@ -250,13 +250,13 @@ function App() {
                 <div className='s1-1-lado'>
                   <input type="file" accept="image/*" className='input-imagem' onChange={ImagemA}  />
                   <img
-                    src={imagem} alt="Imagem Selecionada" className="imagem-preview" />
+                    src={imagem} alt="Imagem" className="imagem-preview" />
                 </div>
 
                 <div className='s1-2-1'>
                   <input type='text' placeholder='nome' className='nome'  value={nome} onChange={e => setNome(e.target.value)}/>
                   <div className='s1-2-lado'>
-                    <select id='select_tamanho' className='dois'>
+                    <select id='select_tamanho' className='dois' value={tamanho} onChange={e => setTamanho(e.target.value) }>
                       <option disabled selected>nº</option>
                       <option>34</option>
                       <option>35</option>
@@ -285,7 +285,9 @@ function App() {
 
       </div>
 
+      
     </div>
+
   );
 }
 }
