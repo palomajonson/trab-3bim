@@ -11,7 +11,7 @@ function App() {
   const [nome, setNome] = useState('');
   const [descri, setDescri] = useState('');
   const [tamanho, setTamanho] = useState('');
-  const [marca, setMarca] = useState(0);
+  const [marca, setMarca] = useState('');
   const [preco, setPreco] = useState('');
 
   function MudarF() {
@@ -22,20 +22,47 @@ function App() {
 
   function MudarP() {
     setPerfil(!perfil);
-    setMais(true);
-    setMais(false);
+  
+    
   };
 
   function MudarM() {
     setMais(!mais);
     setFiltro(false);
-    setPerfil(true);
+    setPerfil(false);
   };
 
-  const handleImagemChange = (event) => {
+
+
+
+
+
+
+
+  const ImagemA = (event) => {
     const arquivoSelecionado = event.target.files[0];
     setImagem(URL.createObjectURL(arquivoSelecionado));
   };
+
+
+  function BotaoMexer() {
+    const [hover, setHover] = useState(false);
+  
+    const MouseEntra = () => {
+      setHover(true);
+    };
+  
+    const MouseSai = () => {
+      setHover(false);
+    };
+
+
+  
+
+
+
+
+
 
   async function Salvar() {
     try {
@@ -55,6 +82,14 @@ function App() {
 
     }
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -80,6 +115,9 @@ function App() {
 
           <div className="input"> <input type="text" placeholder="pesquise pelo produto" /> <img src="/assets/images/lupa.png" alt="" /> </div>
 
+
+          <div className='side-1'>
+
           <button onClick={MudarM}>
             {mais ? (
               <img src="/assets/images/maiscom.png" alt="Imagem True" />
@@ -90,7 +128,7 @@ function App() {
 
           <div className='up'>
             <button onClick={MudarP}>
-              {mais ? (
+              {perfil ? (
                 <img src="/assets/images/perfilcom.png" alt="" />
               ) : (
                 <img src="/assets/images/user.png" alt="" />
@@ -129,6 +167,8 @@ function App() {
 
           </div>
 
+          </div>
+         
 
 
 
@@ -144,9 +184,11 @@ function App() {
 
       <div className='s1'>
 
-        <div className='s1-1'>
+     
           {filtro === true &&
             <>
+            <div className='s1-1'>
+            <div className='s11-1'>
               <select>
                 <option disabled selected>Filtre pelo Preço</option>
                 <option>Menor que 600</option>
@@ -182,24 +224,37 @@ function App() {
                 <option>42</option>
                 <option>43</option>
               </select>
+              </div>
+              <div className='s11-1'>
+             <button onMouseEnter={MouseEntra}
+            onMouseLeave={MouseSai}>
+            {hover && (
+        <img src="/assets/images/filtrar.gif" alt="Meu GIF" />
+           )}
+             <img src='' alt=''/></button>
+             </div>
+           </div>
             </>
+            
+
+
           }
 
 
-        </div>
+   
 
         <div className='s1-2' >
           {mais === true &&
             <>
               <div className='s1-eve'>
                 <div className='s1-1-lado'>
-                  <input type="file" accept="image/*" className='input-imagem' onChange={handleImagemChange} />
+                  <input type="file" accept="image/*" className='input-imagem' onChange={ImagemA}  />
                   <img
                     src={imagem} alt="Imagem Selecionada" className="imagem-preview" />
                 </div>
 
                 <div className='s1-2-1'>
-                  <input type='text' placeholder='nome' className='nome' />
+                  <input type='text' placeholder='nome' className='nome'  value={nome} onChange={e => setNome(e.target.value)}/>
                   <div className='s1-2-lado'>
                     <select id='select_tamanho' className='dois'>
                       <option disabled selected>nº</option>
@@ -211,10 +266,10 @@ function App() {
                       <option>39</option>
                       <option>40</option>
                     </select>
-                    <input type='text' placeholder='marca' className='dois' />
+                    <input type='text' placeholder='marca' className='dois' value={marca} onChange={e => setMarca(e.target.value)}/>
                   </div>
-                  <textarea className='nome' id='area_texto' placeholder='descrição'></textarea>
-                  <input type='number' placeholder='preço' className='nome' />
+                  <textarea className='nome' id='area_texto' placeholder='descrição' value={descri} onChange={e => setDescri(e.target.value)}></textarea>
+                  <input type='number' placeholder='preço' className='nome' value={preco} onChange={e => setPreco(e.target.value)}/>
                   <div className='botoes'>
                     <button className='botao' onClick={Salvar}> <img src='/assets/images/ok.png' alt='' /></button>
                     <button className='botao'> <img src='/assets/images/lixo.png' alt='' /></button>
@@ -232,6 +287,7 @@ function App() {
 
     </div>
   );
+}
 }
 
 export default App;

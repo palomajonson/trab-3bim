@@ -53,12 +53,12 @@
     }
 
     img {
-      height: 4vh;
+      height: 25px;
     }
 
     img:hover {
       cursor: pointer;
-      height: 5vh;
+      height: 30px;
       transition: 0.4s;
     }
   }
@@ -71,6 +71,8 @@
     padding: 2px;
     width: 40vw;
     margin: 0px 15px 0px 15px;
+    height: 5vh;
+    border-radius: 5px;
 
     textarea:focus,
     input:focus {
@@ -81,39 +83,70 @@
     input {
       border: none;
       width: 38vw;
-
+      
 
     }
 
     img {
-      height: 3vh;
+      height: 25px;
     }
 
   }
 
 
   .s1-1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
-    width: 30vw;
-    padding: 0px 0px 0px 35px;
+    position:absolute !important;
+      background-color: #384086af;
+      
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-start;
+      
+      font-size: 12px;
+      margin-top: 25px;
+      margin-left: 5px;
+      padding: 10px 10px 10px 10px;
+      border-radius: 5px;
+      gap: 5px;
+
+
+    
 
 
     select {
       font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-      background-color: #bec4ffd2;
+      background-color: #fffffff3;
       border: 2px solid #3840869c;
       
       padding: 2px;
       margin-inline: 5px;
     }
+    button{
+      border: none;
+      background-color: none;
+      margin-left: 5px;
+      border-radius: 45%;
+    }
+
+    img{
+      height: 5vh;
+      border-radius: 45%;
+    }
 
 
 
   }
+  .s11-1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 15vh;
+  }
+
+
+    
 
   .s1-2 {
     display: flex;
@@ -281,6 +314,22 @@
   .side img:hover{
     height: 4vh;
   }
+
+  .side-1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    img{
+      height: 25px;
+    }
+  }
+
+
+
+
+  
 
 
 }
