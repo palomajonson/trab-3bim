@@ -8,12 +8,12 @@ server.use(express.json());
 
 server.use('/storage/fotos_gerais', express.static('storage/fotos_gerais'));
 
-import produtoController from './controller/produtoController.js';
-server.use(produtoController);
+import produtoController from './controller/produtoController.js'
+server.use(produtoController)
 
 import marcaController from './controller/marcaController.js';
 server.use(marcaController)
 
-import { connection } from '../src/repository/connection.js';
+
 
 server.listen(process.env.PORT, () => console.log(`API CONECTADA NA PORTA ${process.env.PORT}`));

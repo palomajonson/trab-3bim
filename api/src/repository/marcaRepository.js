@@ -1,4 +1,4 @@
-import { connection } from "./connection.js";
+import conexao from "./connection.js";
 
 export async function ListarTodasMarcas() {
     const comando = `
@@ -7,7 +7,7 @@ export async function ListarTodasMarcas() {
     from tb_marca
     `;
 
-    const [respo] = await connection.query(comando)
+    const [respo] = await (await conexao).query(comando)
     return respo
 };
 
@@ -21,7 +21,7 @@ export async function PesquisarMarcas(busca) {
     like ?
     `;
 
-    const [respo] = await connection.query(comando, [`%${busca}%`]);
+    const [respo] = await (await conexao).query(comando, [`%${busca}%`]);
     return respo
 };
 
@@ -31,7 +31,7 @@ export async function AdicionarMarca(marca) {
     values (?)
     `;
     
-    const [respo] = await connection.query(comando, [marca.nome]);
+    const [respo] = await (await conexao).query(comando, [marca.nome]);
 };
 
 export async function AlterarMarca(marca) {
@@ -42,7 +42,7 @@ export async function AlterarMarca(marca) {
     where id_marca = ?
     `;
 
-    const [respo] = await connection.query(comando, [
+    const [respo] = await (await conexao).query(comando, [
         marca.nome,
         marca.id
     ]);
@@ -57,5 +57,5 @@ export async function DeletarMarca(id) {
     where id_marca = ?
     `;
 
-    const [respo] = connection.query(comando, [id]);
+    const [respo] = con.query(comando, [id]);
 };

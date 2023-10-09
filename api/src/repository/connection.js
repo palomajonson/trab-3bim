@@ -1,7 +1,7 @@
-import mysql from 'mysql2/promise';
+import mysql from 'mysql2/promise'
 
 
-const connection = mysql.createConnection({
+const conexao = mysql.createConnection({
         host: process.env.MYSQL_HOST,
         user: process.env.MYSQL_USER,
         password: process.env.MYSQL_PWD,
@@ -10,4 +10,4 @@ const connection = mysql.createConnection({
 
 console.log('CONEXÃO OPERANTE')
 
-export { connection }
+export default conexao;

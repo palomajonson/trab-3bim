@@ -1,4 +1,4 @@
-import { connection } from "./connection.js";
+import conexao from "./connection.js";
 
 export async function ListarTodosProdutos() {
     const comando = `
@@ -10,7 +10,7 @@ export async function ListarTodosProdutos() {
     from tb_produtos
     `;
 
-    const [respo] = await connection.query(comando);
+    const [respo] = await (await conexao).query(comando);
     return respo;
 };
 
@@ -24,7 +24,7 @@ export async function PesquisarProdutos(busca) {
     like ? 
     `;
 
-    const [respo] = await connection.query(comando, [`%${busca}%`]);
+    const [respo] = await (await conexao).query(comando, [`%${busca}%`]);
     return respo;
 };
 
@@ -42,7 +42,7 @@ export async function MostrarDetalhesProduto(id) {
     where id_produto = ?
     `;
 
-    const [respo] = await connection.query(comando, [id])
+    const [respo] = await (await conexao).query(comando, [id])
     return respo[0];
 }
 
@@ -62,7 +62,7 @@ export async function AdicionarProdutos(produto) {
         ?
     )`; 
 
-    const [respo] = await connection.query(comando, [
+    const [respo] = await (await conexao).query(comando, [
         produto.nome,
         produto.tamanho,
         produto.descricao,
@@ -83,7 +83,7 @@ export async function InserirImagemProduto(imagem, id) {
     where id_produto = ?
     `;
 
-    const [respo] = await connection.query(comando, [imagem, id])
+    const [respo] = await (await conexao).query(comando, [imagem, id])
     const respoAR = respo.AffectedRows
     return respoAR;
 };
@@ -100,7 +100,7 @@ export async function AlterarProdutos(produto) {
     where id_produto = ?
     `;
 
-    const [respo] = await connection.query(comando, [
+    const [respo] = await (await conexao).query(comando, [
         produto.nome,
         produto.tamanho,
         produto.descricao,
@@ -119,5 +119,5 @@ export async function DeletarProdutos(id) {
     where id_produto = ?
     `;
 
-    const [respo] = await connection.query(comando, [id]);
+    const [respo] = await con.query(comando, [id]);
 };
